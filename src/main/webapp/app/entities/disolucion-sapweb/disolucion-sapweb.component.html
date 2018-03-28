@@ -1,0 +1,120 @@
+<div>
+    <h2>
+        <span jhiTranslate="demojhipsterApp.disolucion.home.title">Disolucions</span>
+        <button class="btn btn-primary float-right jh-create-entity create-disolucion-sapweb" [routerLink]="['/', { outlets: { popup: ['disolucion-sapweb-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="demojhipsterApp.disolucion.home.createLabel">
+            Create new Disolucion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="disolucions">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rut"><span jhiTranslate="demojhipsterApp.disolucion.rut">Rut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dv"><span jhiTranslate="demojhipsterApp.disolucion.dv">Dv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extracto"><span jhiTranslate="demojhipsterApp.disolucion.extracto">Extracto</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="demojhipsterApp.disolucion.nombre">Nombre</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecpub"><span jhiTranslate="demojhipsterApp.disolucion.fecpub">Fecpub</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nomfan"><span jhiTranslate="demojhipsterApp.disolucion.nomfan">Nomfan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="feconst"><span jhiTranslate="demojhipsterApp.disolucion.feconst">Feconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tipconst"><span jhiTranslate="demojhipsterApp.disolucion.tipconst">Tipconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="duracion"><span jhiTranslate="demojhipsterApp.disolucion.duracion">Duracion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecterm"><span jhiTranslate="demojhipsterApp.disolucion.fecterm">Fecterm</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cappag"><span jhiTranslate="demojhipsterApp.disolucion.cappag">Cappag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="capsus"><span jhiTranslate="demojhipsterApp.disolucion.capsus">Capsus</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nacciones"><span jhiTranslate="demojhipsterApp.disolucion.nacciones">Nacciones</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="notariorut"><span jhiTranslate="demojhipsterApp.disolucion.notariorut">Notariorut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="notariodv"><span jhiTranslate="demojhipsterApp.disolucion.notariodv">Notariodv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="directorrut"><span jhiTranslate="demojhipsterApp.disolucion.directorrut">Directorrut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="directordv"><span jhiTranslate="demojhipsterApp.disolucion.directordv">Directordv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="reprut"><span jhiTranslate="demojhipsterApp.disolucion.reprut">Reprut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="repdv"><span jhiTranslate="demojhipsterApp.disolucion.repdv">Repdv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="regcom"><span jhiTranslate="demojhipsterApp.disolucion.regcom">Regcom</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fojas"><span jhiTranslate="demojhipsterApp.disolucion.fojas">Fojas</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="num"><span jhiTranslate="demojhipsterApp.disolucion.num">Num</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ano"><span jhiTranslate="demojhipsterApp.disolucion.ano">Ano</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecesc"><span jhiTranslate="demojhipsterApp.disolucion.fecesc">Fecesc</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="estado"><span jhiTranslate="demojhipsterApp.disolucion.estado">Estado</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="grupo"><span jhiTranslate="demojhipsterApp.disolucion.grupo">Grupo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecact"><span jhiTranslate="demojhipsterApp.disolucion.fecact">Fecact</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecactnom"><span jhiTranslate="demojhipsterApp.disolucion.fecactnom">Fecactnom</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let disolucion of disolucions ;trackBy: trackId">
+                <td><a [routerLink]="['../disolucion-sapweb', disolucion.id ]">{{disolucion.id}}</a></td>
+                <td>{{disolucion.rut}}</td>
+                <td>{{disolucion.dv}}</td>
+                <td>{{disolucion.extracto}}</td>
+                <td>{{disolucion.nombre}}</td>
+                <td>{{disolucion.fecpub}}</td>
+                <td>{{disolucion.nomfan}}</td>
+                <td>{{disolucion.feconst}}</td>
+                <td>{{disolucion.tipconst}}</td>
+                <td>{{disolucion.duracion}}</td>
+                <td>{{disolucion.fecterm}}</td>
+                <td>{{disolucion.cappag}}</td>
+                <td>{{disolucion.capsus}}</td>
+                <td>{{disolucion.nacciones}}</td>
+                <td>{{disolucion.notariorut}}</td>
+                <td>{{disolucion.notariodv}}</td>
+                <td>{{disolucion.directorrut}}</td>
+                <td>{{disolucion.directordv}}</td>
+                <td>{{disolucion.reprut}}</td>
+                <td>{{disolucion.repdv}}</td>
+                <td>{{disolucion.regcom}}</td>
+                <td>{{disolucion.fojas}}</td>
+                <td>{{disolucion.num}}</td>
+                <td>{{disolucion.ano}}</td>
+                <td>{{disolucion.fecesc | date:'mediumDate'}}</td>
+                <td>{{disolucion.estado}}</td>
+                <td>{{disolucion.grupo}}</td>
+                <td>{{disolucion.fecact | date:'mediumDate'}}</td>
+                <td>{{disolucion.fecactnom | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../disolucion-sapweb', disolucion.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'disolucion-sapweb/'+ disolucion.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'disolucion-sapweb/'+ disolucion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="disolucions && disolucions.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

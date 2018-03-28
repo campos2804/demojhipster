@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cambioExtracto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cambioRut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cambioDv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cambioEmp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cambioFanta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cambioaEmp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cambioaFanta",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180328145937",
+    "javadoc": "Table SOCCONS_CONTROL_CAMBIO_RAZON",
+    "entityTableName": "control_cambio_razon",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "sapweb"
+}

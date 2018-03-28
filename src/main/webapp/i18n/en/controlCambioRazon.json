@@ -1,0 +1,28 @@
+
+{
+    "demojhipsterApp": {
+        "controlCambioRazon" : {
+            "home": {
+                "title": "Control Cambio Razons",
+                "createLabel": "Create a new Control Cambio Razon",
+                "createOrEditLabel": "Create or edit a Control Cambio Razon"
+            },
+            "created": "A new Control Cambio Razon is created with identifier {{ param }}",
+            "updated": "A Control Cambio Razon is updated with identifier {{ param }}",
+            "deleted": "A Control Cambio Razon is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Control Cambio Razon {{ id }}?"
+            },
+            "detail": {
+                "title": "Control Cambio Razon"
+            },
+            "cambioExtracto": "Cambio Extracto",
+            "cambioRut": "Cambio Rut",
+            "cambioDv": "Cambio Dv",
+            "cambioEmp": "Cambio Emp",
+            "cambioFanta": "Cambio Fanta",
+            "cambioaEmp": "Cambioa Emp",
+            "cambioaFanta": "Cambioa Fanta"
+        }
+    }
+}

@@ -1,0 +1,134 @@
+
+<div *ngIf="disolucion">
+    <h2><span jhiTranslate="demojhipsterApp.disolucion.detail.title">Disolucion</span> {{disolucion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.rut">Rut</span></dt>
+        <dd>
+            <span>{{disolucion.rut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.dv">Dv</span></dt>
+        <dd>
+            <span>{{disolucion.dv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.extracto">Extracto</span></dt>
+        <dd>
+            <span>{{disolucion.extracto}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{disolucion.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.fecpub">Fecpub</span></dt>
+        <dd>
+            <span>{{disolucion.fecpub}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.nomfan">Nomfan</span></dt>
+        <dd>
+            <span>{{disolucion.nomfan}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.feconst">Feconst</span></dt>
+        <dd>
+            <span>{{disolucion.feconst}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.tipconst">Tipconst</span></dt>
+        <dd>
+            <span>{{disolucion.tipconst}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.duracion">Duracion</span></dt>
+        <dd>
+            <span>{{disolucion.duracion}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.fecterm">Fecterm</span></dt>
+        <dd>
+            <span>{{disolucion.fecterm}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.cappag">Cappag</span></dt>
+        <dd>
+            <span>{{disolucion.cappag}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.capsus">Capsus</span></dt>
+        <dd>
+            <span>{{disolucion.capsus}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.nacciones">Nacciones</span></dt>
+        <dd>
+            <span>{{disolucion.nacciones}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.notariorut">Notariorut</span></dt>
+        <dd>
+            <span>{{disolucion.notariorut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.notariodv">Notariodv</span></dt>
+        <dd>
+            <span>{{disolucion.notariodv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.directorrut">Directorrut</span></dt>
+        <dd>
+            <span>{{disolucion.directorrut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.directordv">Directordv</span></dt>
+        <dd>
+            <span>{{disolucion.directordv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.reprut">Reprut</span></dt>
+        <dd>
+            <span>{{disolucion.reprut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.repdv">Repdv</span></dt>
+        <dd>
+            <span>{{disolucion.repdv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.regcom">Regcom</span></dt>
+        <dd>
+            <span>{{disolucion.regcom}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.fojas">Fojas</span></dt>
+        <dd>
+            <span>{{disolucion.fojas}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.num">Num</span></dt>
+        <dd>
+            <span>{{disolucion.num}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.ano">Ano</span></dt>
+        <dd>
+            <span>{{disolucion.ano}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.fecesc">Fecesc</span></dt>
+        <dd>
+            <span>{{disolucion.fecesc | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.estado">Estado</span></dt>
+        <dd>
+            <span>{{disolucion.estado}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.grupo">Grupo</span></dt>
+        <dd>
+            <span>{{disolucion.grupo}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.fecact">Fecact</span></dt>
+        <dd>
+            <span>{{disolucion.fecact | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.disolucion.fecactnom">Fecactnom</span></dt>
+        <dd>
+            <span>{{disolucion.fecactnom | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'disolucion-sapweb/'+ disolucion.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

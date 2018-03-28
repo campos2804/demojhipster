@@ -1,0 +1,50 @@
+
+{
+    "demojhipsterApp": {
+        "modificacion" : {
+            "home": {
+                "title": "Modificacions",
+                "createLabel": "Crear nuevo Modificacion",
+                "createOrEditLabel": "Crear o editar Modificacion"
+            },
+            "created": "Un nuevo Modificacion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Modificacion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Modificacion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Modificacion {{ id }}?"
+            },
+            "detail": {
+                "title": "Modificacion"
+            },
+            "rut": "Rut",
+            "dv": "Dv",
+            "extracto": "Extracto",
+            "nombre": "Nombre",
+            "fecpub": "Fecpub",
+            "nomfan": "Nomfan",
+            "feconst": "Feconst",
+            "tipconst": "Tipconst",
+            "duracion": "Duracion",
+            "fecterm": "Fecterm",
+            "cappag": "Cappag",
+            "capsus": "Capsus",
+            "nacciones": "Nacciones",
+            "notariorut": "Notariorut",
+            "notariodv": "Notariodv",
+            "directorrut": "Directorrut",
+            "directordv": "Directordv",
+            "reprut": "Reprut",
+            "repdv": "Repdv",
+            "regcom": "Regcom",
+            "fojas": "Fojas",
+            "num": "Num",
+            "ano": "Ano",
+            "fpubconst": "Fpubconst",
+            "fecescrit": "Fecescrit",
+            "estado": "Estado",
+            "grupo": "Grupo",
+            "fecact": "Fecact",
+            "fecactnom": "Fecactnom"
+        }
+    }
+}

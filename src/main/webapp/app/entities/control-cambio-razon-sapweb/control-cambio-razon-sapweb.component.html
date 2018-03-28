@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="demojhipsterApp.controlCambioRazon.home.title">Control Cambio Razons</span>
+        <button class="btn btn-primary float-right jh-create-entity create-control-cambio-razon-sapweb" [routerLink]="['/', { outlets: { popup: ['control-cambio-razon-sapweb-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="demojhipsterApp.controlCambioRazon.home.createLabel">
+            Create new Control Cambio Razon
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="controlCambioRazons">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioExtracto">Cambio Extracto</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioRut">Cambio Rut</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioDv">Cambio Dv</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioEmp">Cambio Emp</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioFanta">Cambio Fanta</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioaEmp">Cambioa Emp</span></th>
+            <th><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioaFanta">Cambioa Fanta</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let controlCambioRazon of controlCambioRazons ;trackBy: trackId">
+                <td><a [routerLink]="['../control-cambio-razon-sapweb', controlCambioRazon.id ]">{{controlCambioRazon.id}}</a></td>
+                <td>{{controlCambioRazon.cambioExtracto}}</td>
+                <td>{{controlCambioRazon.cambioRut}}</td>
+                <td>{{controlCambioRazon.cambioDv}}</td>
+                <td>{{controlCambioRazon.cambioEmp}}</td>
+                <td>{{controlCambioRazon.cambioFanta}}</td>
+                <td>{{controlCambioRazon.cambioaEmp}}</td>
+                <td>{{controlCambioRazon.cambioaFanta}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../control-cambio-razon-sapweb', controlCambioRazon.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'control-cambio-razon-sapweb/'+ controlCambioRazon.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'control-cambio-razon-sapweb/'+ controlCambioRazon.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

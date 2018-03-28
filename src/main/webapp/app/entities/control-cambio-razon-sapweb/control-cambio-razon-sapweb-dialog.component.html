@@ -1,0 +1,60 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myControlCambioRazonLabel" jhiTranslate="demojhipsterApp.controlCambioRazon.home.createOrEditLabel">Create or edit a Control Cambio Razon</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!controlCambioRazon.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="controlCambioRazon.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioExtracto" for="field_cambioExtracto">Cambio Extracto</label>
+            <input type="text" class="form-control" name="cambioExtracto" id="field_cambioExtracto"
+                [(ngModel)]="controlCambioRazon.cambioExtracto" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioRut" for="field_cambioRut">Cambio Rut</label>
+            <input type="number" class="form-control" name="cambioRut" id="field_cambioRut"
+                [(ngModel)]="controlCambioRazon.cambioRut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioDv" for="field_cambioDv">Cambio Dv</label>
+            <input type="text" class="form-control" name="cambioDv" id="field_cambioDv"
+                [(ngModel)]="controlCambioRazon.cambioDv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioEmp" for="field_cambioEmp">Cambio Emp</label>
+            <input type="text" class="form-control" name="cambioEmp" id="field_cambioEmp"
+                [(ngModel)]="controlCambioRazon.cambioEmp" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioFanta" for="field_cambioFanta">Cambio Fanta</label>
+            <input type="text" class="form-control" name="cambioFanta" id="field_cambioFanta"
+                [(ngModel)]="controlCambioRazon.cambioFanta" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioaEmp" for="field_cambioaEmp">Cambioa Emp</label>
+            <input type="text" class="form-control" name="cambioaEmp" id="field_cambioaEmp"
+                [(ngModel)]="controlCambioRazon.cambioaEmp" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.controlCambioRazon.cambioaFanta" for="field_cambioaFanta">Cambioa Fanta</label>
+            <input type="text" class="form-control" name="cambioaFanta" id="field_cambioaFanta"
+                [(ngModel)]="controlCambioRazon.cambioaFanta" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

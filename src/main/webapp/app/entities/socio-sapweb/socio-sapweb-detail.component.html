@@ -1,0 +1,58 @@
+
+<div *ngIf="socio">
+    <h2><span jhiTranslate="demojhipsterApp.socio.detail.title">Socio</span> {{socio.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="demojhipsterApp.socio.rut">Rut</span></dt>
+        <dd>
+            <span>{{socio.rut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.dv">Dv</span></dt>
+        <dd>
+            <span>{{socio.dv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{socio.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.extracto">Extracto</span></dt>
+        <dd>
+            <span>{{socio.extracto}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.aporte">Aporte</span></dt>
+        <dd>
+            <span>{{socio.aporte}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.aportePorcen">Aporte Porcen</span></dt>
+        <dd>
+            <span>{{socio.aportePorcen}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.estado">Estado</span></dt>
+        <dd>
+            <span>{{socio.estado}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.estadoEs">Estado Es</span></dt>
+        <dd>
+            <span>{{socio.estadoEs}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socio.iden">Iden</span></dt>
+        <dd>
+            <span>{{socio.iden}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'socio-sapweb/'+ socio.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

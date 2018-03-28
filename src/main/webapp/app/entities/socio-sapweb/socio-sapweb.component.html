@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="demojhipsterApp.socio.home.title">Socios</span>
+        <button class="btn btn-primary float-right jh-create-entity create-socio-sapweb" [routerLink]="['/', { outlets: { popup: ['socio-sapweb-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="demojhipsterApp.socio.home.createLabel">
+            Create new Socio
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="socios">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rut"><span jhiTranslate="demojhipsterApp.socio.rut">Rut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dv"><span jhiTranslate="demojhipsterApp.socio.dv">Dv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="demojhipsterApp.socio.nombre">Nombre</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extracto"><span jhiTranslate="demojhipsterApp.socio.extracto">Extracto</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="aporte"><span jhiTranslate="demojhipsterApp.socio.aporte">Aporte</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="aportePorcen"><span jhiTranslate="demojhipsterApp.socio.aportePorcen">Aporte Porcen</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="estado"><span jhiTranslate="demojhipsterApp.socio.estado">Estado</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="estadoEs"><span jhiTranslate="demojhipsterApp.socio.estadoEs">Estado Es</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="iden"><span jhiTranslate="demojhipsterApp.socio.iden">Iden</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let socio of socios ;trackBy: trackId">
+                <td><a [routerLink]="['../socio-sapweb', socio.id ]">{{socio.id}}</a></td>
+                <td>{{socio.rut}}</td>
+                <td>{{socio.dv}}</td>
+                <td>{{socio.nombre}}</td>
+                <td>{{socio.extracto}}</td>
+                <td>{{socio.aporte}}</td>
+                <td>{{socio.aportePorcen}}</td>
+                <td>{{socio.estado}}</td>
+                <td>{{socio.estadoEs}}</td>
+                <td>{{socio.iden}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../socio-sapweb', socio.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'socio-sapweb/'+ socio.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'socio-sapweb/'+ socio.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

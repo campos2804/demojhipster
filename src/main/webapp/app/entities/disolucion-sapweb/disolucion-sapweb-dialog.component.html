@@ -1,0 +1,180 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myDisolucionLabel" jhiTranslate="demojhipsterApp.disolucion.home.createOrEditLabel">Create or edit a Disolucion</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!disolucion.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="disolucion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.rut" for="field_rut">Rut</label>
+            <input type="number" class="form-control" name="rut" id="field_rut"
+                [(ngModel)]="disolucion.rut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.dv" for="field_dv">Dv</label>
+            <input type="text" class="form-control" name="dv" id="field_dv"
+                [(ngModel)]="disolucion.dv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.extracto" for="field_extracto">Extracto</label>
+            <input type="text" class="form-control" name="extracto" id="field_extracto"
+                [(ngModel)]="disolucion.extracto" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                [(ngModel)]="disolucion.nombre" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.fecpub" for="field_fecpub">Fecpub</label>
+            <input type="text" class="form-control" name="fecpub" id="field_fecpub"
+                [(ngModel)]="disolucion.fecpub" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.nomfan" for="field_nomfan">Nomfan</label>
+            <input type="text" class="form-control" name="nomfan" id="field_nomfan"
+                [(ngModel)]="disolucion.nomfan" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.feconst" for="field_feconst">Feconst</label>
+            <input type="text" class="form-control" name="feconst" id="field_feconst"
+                [(ngModel)]="disolucion.feconst" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.tipconst" for="field_tipconst">Tipconst</label>
+            <input type="text" class="form-control" name="tipconst" id="field_tipconst"
+                [(ngModel)]="disolucion.tipconst" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.duracion" for="field_duracion">Duracion</label>
+            <input type="text" class="form-control" name="duracion" id="field_duracion"
+                [(ngModel)]="disolucion.duracion" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.fecterm" for="field_fecterm">Fecterm</label>
+            <input type="text" class="form-control" name="fecterm" id="field_fecterm"
+                [(ngModel)]="disolucion.fecterm" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.cappag" for="field_cappag">Cappag</label>
+            <input type="text" class="form-control" name="cappag" id="field_cappag"
+                [(ngModel)]="disolucion.cappag" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.capsus" for="field_capsus">Capsus</label>
+            <input type="text" class="form-control" name="capsus" id="field_capsus"
+                [(ngModel)]="disolucion.capsus" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.nacciones" for="field_nacciones">Nacciones</label>
+            <input type="text" class="form-control" name="nacciones" id="field_nacciones"
+                [(ngModel)]="disolucion.nacciones" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.notariorut" for="field_notariorut">Notariorut</label>
+            <input type="number" class="form-control" name="notariorut" id="field_notariorut"
+                [(ngModel)]="disolucion.notariorut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.notariodv" for="field_notariodv">Notariodv</label>
+            <input type="text" class="form-control" name="notariodv" id="field_notariodv"
+                [(ngModel)]="disolucion.notariodv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.directorrut" for="field_directorrut">Directorrut</label>
+            <input type="number" class="form-control" name="directorrut" id="field_directorrut"
+                [(ngModel)]="disolucion.directorrut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.directordv" for="field_directordv">Directordv</label>
+            <input type="text" class="form-control" name="directordv" id="field_directordv"
+                [(ngModel)]="disolucion.directordv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.reprut" for="field_reprut">Reprut</label>
+            <input type="number" class="form-control" name="reprut" id="field_reprut"
+                [(ngModel)]="disolucion.reprut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.repdv" for="field_repdv">Repdv</label>
+            <input type="text" class="form-control" name="repdv" id="field_repdv"
+                [(ngModel)]="disolucion.repdv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.regcom" for="field_regcom">Regcom</label>
+            <input type="text" class="form-control" name="regcom" id="field_regcom"
+                [(ngModel)]="disolucion.regcom" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.fojas" for="field_fojas">Fojas</label>
+            <input type="text" class="form-control" name="fojas" id="field_fojas"
+                [(ngModel)]="disolucion.fojas" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.num" for="field_num">Num</label>
+            <input type="text" class="form-control" name="num" id="field_num"
+                [(ngModel)]="disolucion.num" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.ano" for="field_ano">Ano</label>
+            <input type="text" class="form-control" name="ano" id="field_ano"
+                [(ngModel)]="disolucion.ano" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.fecesc" for="field_fecesc">Fecesc</label>
+            <div class="input-group">
+                <input id="field_fecesc" type="text" class="form-control" name="fecesc" ngbDatepicker  #fecescDp="ngbDatepicker" [(ngModel)]="disolucion.fecesc"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="fecescDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.estado" for="field_estado">Estado</label>
+            <input type="number" class="form-control" name="estado" id="field_estado"
+                [(ngModel)]="disolucion.estado" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.grupo" for="field_grupo">Grupo</label>
+            <input type="number" class="form-control" name="grupo" id="field_grupo"
+                [(ngModel)]="disolucion.grupo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.fecact" for="field_fecact">Fecact</label>
+            <div class="input-group">
+                <input id="field_fecact" type="text" class="form-control" name="fecact" ngbDatepicker  #fecactDp="ngbDatepicker" [(ngModel)]="disolucion.fecact"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="fecactDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.disolucion.fecactnom" for="field_fecactnom">Fecactnom</label>
+            <div class="input-group">
+                <input id="field_fecactnom" type="text" class="form-control" name="fecactnom" ngbDatepicker  #fecactnomDp="ngbDatepicker" [(ngModel)]="disolucion.fecactnom"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="fecactnomDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

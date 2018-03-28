@@ -1,0 +1,130 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "rut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extracto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecpub",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomfan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "feconst",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipconst",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duracion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecterm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cappag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "capsus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nacciones",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "notariorut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "notariodv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "directorrut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "directordv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reprut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "repdv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regcom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fojas",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "num",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ano",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fpubconst",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fecescrit",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "grupo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fecact",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "fecactnom",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20180328164808",
+    "javadoc": "table SOCCONS_SOCIEDAD_MODIFICACION",
+    "entityTableName": "modificacion",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "sapweb"
+}

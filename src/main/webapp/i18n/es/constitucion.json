@@ -1,0 +1,47 @@
+
+{
+    "demojhipsterApp": {
+        "constitucion" : {
+            "home": {
+                "title": "Constitucions",
+                "createLabel": "Crear nuevo Constitucion",
+                "createOrEditLabel": "Crear o editar Constitucion"
+            },
+            "created": "Un nuevo Constitucion ha sido creado con el identificador {{ param }}",
+            "updated": "Un Constitucion ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Constitucion ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Constitucion {{ id }}?"
+            },
+            "detail": {
+                "title": "Constitucion"
+            },
+            "rut": "Rut",
+            "dv": "Dv",
+            "extracto": "Extracto",
+            "nombre": "Nombre",
+            "fecpub": "Fecpub",
+            "nomfan": "Nomfan",
+            "feconst": "Feconst",
+            "tipconst": "Tipconst",
+            "duracion": "Duracion",
+            "fecterm": "Fecterm",
+            "cappag": "Cappag",
+            "capsus": "Capsus",
+            "nacciones": "Nacciones",
+            "notariorut": "Notariorut",
+            "notariodv": "Notariodv",
+            "directorrut": "Directorrut",
+            "directordv": "Directordv",
+            "reprut": "Reprut",
+            "repdv": "Repdv",
+            "estado": "Estado",
+            "extnomdup": "Extnomdup",
+            "extnomduprut": "Extnomduprut",
+            "extnomdupdv": "Extnomdupdv",
+            "grupo": "Grupo",
+            "fecact": "Fecact",
+            "fecactnom": "Fecactnom"
+        }
+    }
+}

@@ -1,0 +1,122 @@
+<div>
+    <h2>
+        <span jhiTranslate="demojhipsterApp.modificacion.home.title">Modificacions</span>
+        <button class="btn btn-primary float-right jh-create-entity create-modificacion-sapweb" [routerLink]="['/', { outlets: { popup: ['modificacion-sapweb-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="demojhipsterApp.modificacion.home.createLabel">
+            Create new Modificacion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="modificacions">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rut"><span jhiTranslate="demojhipsterApp.modificacion.rut">Rut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dv"><span jhiTranslate="demojhipsterApp.modificacion.dv">Dv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extracto"><span jhiTranslate="demojhipsterApp.modificacion.extracto">Extracto</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="demojhipsterApp.modificacion.nombre">Nombre</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecpub"><span jhiTranslate="demojhipsterApp.modificacion.fecpub">Fecpub</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nomfan"><span jhiTranslate="demojhipsterApp.modificacion.nomfan">Nomfan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="feconst"><span jhiTranslate="demojhipsterApp.modificacion.feconst">Feconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tipconst"><span jhiTranslate="demojhipsterApp.modificacion.tipconst">Tipconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="duracion"><span jhiTranslate="demojhipsterApp.modificacion.duracion">Duracion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecterm"><span jhiTranslate="demojhipsterApp.modificacion.fecterm">Fecterm</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cappag"><span jhiTranslate="demojhipsterApp.modificacion.cappag">Cappag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="capsus"><span jhiTranslate="demojhipsterApp.modificacion.capsus">Capsus</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nacciones"><span jhiTranslate="demojhipsterApp.modificacion.nacciones">Nacciones</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="notariorut"><span jhiTranslate="demojhipsterApp.modificacion.notariorut">Notariorut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="notariodv"><span jhiTranslate="demojhipsterApp.modificacion.notariodv">Notariodv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="directorrut"><span jhiTranslate="demojhipsterApp.modificacion.directorrut">Directorrut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="directordv"><span jhiTranslate="demojhipsterApp.modificacion.directordv">Directordv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="reprut"><span jhiTranslate="demojhipsterApp.modificacion.reprut">Reprut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="repdv"><span jhiTranslate="demojhipsterApp.modificacion.repdv">Repdv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="regcom"><span jhiTranslate="demojhipsterApp.modificacion.regcom">Regcom</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fojas"><span jhiTranslate="demojhipsterApp.modificacion.fojas">Fojas</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="num"><span jhiTranslate="demojhipsterApp.modificacion.num">Num</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="ano"><span jhiTranslate="demojhipsterApp.modificacion.ano">Ano</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fpubconst"><span jhiTranslate="demojhipsterApp.modificacion.fpubconst">Fpubconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecescrit"><span jhiTranslate="demojhipsterApp.modificacion.fecescrit">Fecescrit</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="estado"><span jhiTranslate="demojhipsterApp.modificacion.estado">Estado</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="grupo"><span jhiTranslate="demojhipsterApp.modificacion.grupo">Grupo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecact"><span jhiTranslate="demojhipsterApp.modificacion.fecact">Fecact</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecactnom"><span jhiTranslate="demojhipsterApp.modificacion.fecactnom">Fecactnom</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let modificacion of modificacions ;trackBy: trackId">
+                <td><a [routerLink]="['../modificacion-sapweb', modificacion.id ]">{{modificacion.id}}</a></td>
+                <td>{{modificacion.rut}}</td>
+                <td>{{modificacion.dv}}</td>
+                <td>{{modificacion.extracto}}</td>
+                <td>{{modificacion.nombre}}</td>
+                <td>{{modificacion.fecpub}}</td>
+                <td>{{modificacion.nomfan}}</td>
+                <td>{{modificacion.feconst}}</td>
+                <td>{{modificacion.tipconst}}</td>
+                <td>{{modificacion.duracion}}</td>
+                <td>{{modificacion.fecterm}}</td>
+                <td>{{modificacion.cappag}}</td>
+                <td>{{modificacion.capsus}}</td>
+                <td>{{modificacion.nacciones}}</td>
+                <td>{{modificacion.notariorut}}</td>
+                <td>{{modificacion.notariodv}}</td>
+                <td>{{modificacion.directorrut}}</td>
+                <td>{{modificacion.directordv}}</td>
+                <td>{{modificacion.reprut}}</td>
+                <td>{{modificacion.repdv}}</td>
+                <td>{{modificacion.regcom}}</td>
+                <td>{{modificacion.fojas}}</td>
+                <td>{{modificacion.num}}</td>
+                <td>{{modificacion.ano}}</td>
+                <td>{{modificacion.fpubconst}}</td>
+                <td>{{modificacion.fecescrit | date:'mediumDate'}}</td>
+                <td>{{modificacion.estado}}</td>
+                <td>{{modificacion.grupo}}</td>
+                <td>{{modificacion.fecact | date:'mediumDate'}}</td>
+                <td>{{modificacion.fecactnom | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../modificacion-sapweb', modificacion.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'modificacion-sapweb/'+ modificacion.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'modificacion-sapweb/'+ modificacion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="modificacions && modificacions.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

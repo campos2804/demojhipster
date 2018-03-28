@@ -1,0 +1,26 @@
+
+{
+    "demojhipsterApp": {
+        "socioDatPer" : {
+            "home": {
+                "title": "Socio Dat Pers",
+                "createLabel": "Create a new Socio Dat Per",
+                "createOrEditLabel": "Create or edit a Socio Dat Per"
+            },
+            "created": "A new Socio Dat Per is created with identifier {{ param }}",
+            "updated": "A Socio Dat Per is updated with identifier {{ param }}",
+            "deleted": "A Socio Dat Per is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Socio Dat Per {{ id }}?"
+            },
+            "detail": {
+                "title": "Socio Dat Per"
+            },
+            "corrControl": "Corr Control",
+            "usuarioId": "Usuario Id",
+            "extracto": "Extracto",
+            "fechaActiva": "Fecha Activa",
+            "fechaTermina": "Fecha Termina"
+        }
+    }
+}

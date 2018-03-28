@@ -1,0 +1,50 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "rut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extracto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aporte",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aportePorcen",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "estadoEs",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "iden",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180328164805",
+    "javadoc": "table SOCCONS_SOCIOS",
+    "entityTableName": "socio",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "sapweb"
+}

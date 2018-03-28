@@ -1,0 +1,24 @@
+
+{
+    "demojhipsterApp": {
+        "cargaSocvig" : {
+            "home": {
+                "title": "Carga Socvigs",
+                "createLabel": "Crear nuevo Carga Socvig",
+                "createOrEditLabel": "Crear o editar Carga Socvig"
+            },
+            "created": "Un nuevo Carga Socvig ha sido creado con el identificador {{ param }}",
+            "updated": "Un Carga Socvig ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Carga Socvig ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Carga Socvig {{ id }}?"
+            },
+            "detail": {
+                "title": "Carga Socvig"
+            },
+            "rut": "Rut",
+            "dv": "Dv",
+            "nivel": "Nivel"
+        }
+    }
+}

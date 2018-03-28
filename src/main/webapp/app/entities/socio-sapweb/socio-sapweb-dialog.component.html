@@ -1,0 +1,70 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="mySocioLabel" jhiTranslate="demojhipsterApp.socio.home.createOrEditLabel">Create or edit a Socio</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!socio.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="socio.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.rut" for="field_rut">Rut</label>
+            <input type="number" class="form-control" name="rut" id="field_rut"
+                [(ngModel)]="socio.rut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.dv" for="field_dv">Dv</label>
+            <input type="text" class="form-control" name="dv" id="field_dv"
+                [(ngModel)]="socio.dv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                [(ngModel)]="socio.nombre" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.extracto" for="field_extracto">Extracto</label>
+            <input type="text" class="form-control" name="extracto" id="field_extracto"
+                [(ngModel)]="socio.extracto" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.aporte" for="field_aporte">Aporte</label>
+            <input type="text" class="form-control" name="aporte" id="field_aporte"
+                [(ngModel)]="socio.aporte" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.aportePorcen" for="field_aportePorcen">Aporte Porcen</label>
+            <input type="number" class="form-control" name="aportePorcen" id="field_aportePorcen"
+                [(ngModel)]="socio.aportePorcen" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.estado" for="field_estado">Estado</label>
+            <input type="number" class="form-control" name="estado" id="field_estado"
+                [(ngModel)]="socio.estado" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.estadoEs" for="field_estadoEs">Estado Es</label>
+            <input type="number" class="form-control" name="estadoEs" id="field_estadoEs"
+                [(ngModel)]="socio.estadoEs" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.socio.iden" for="field_iden">Iden</label>
+            <input type="number" class="form-control" name="iden" id="field_iden"
+                [(ngModel)]="socio.iden" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

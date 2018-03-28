@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="demojhipsterApp.cargaSocvig.home.title">Carga Socvigs</span>
+        <button class="btn btn-primary float-right jh-create-entity create-carga-socvig-sapweb" [routerLink]="['/', { outlets: { popup: ['carga-socvig-sapweb-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="demojhipsterApp.cargaSocvig.home.createLabel">
+            Create new Carga Socvig
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="cargaSocvigs">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="demojhipsterApp.cargaSocvig.rut">Rut</span></th>
+            <th><span jhiTranslate="demojhipsterApp.cargaSocvig.dv">Dv</span></th>
+            <th><span jhiTranslate="demojhipsterApp.cargaSocvig.nivel">Nivel</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cargaSocvig of cargaSocvigs ;trackBy: trackId">
+                <td><a [routerLink]="['../carga-socvig-sapweb', cargaSocvig.id ]">{{cargaSocvig.id}}</a></td>
+                <td>{{cargaSocvig.rut}}</td>
+                <td>{{cargaSocvig.dv}}</td>
+                <td>{{cargaSocvig.nivel}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../carga-socvig-sapweb', cargaSocvig.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'carga-socvig-sapweb/'+ cargaSocvig.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'carga-socvig-sapweb/'+ cargaSocvig.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

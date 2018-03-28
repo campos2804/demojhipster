@@ -1,0 +1,49 @@
+
+{
+    "demojhipsterApp": {
+        "disolucion" : {
+            "home": {
+                "title": "Disolucions",
+                "createLabel": "Create a new Disolucion",
+                "createOrEditLabel": "Create or edit a Disolucion"
+            },
+            "created": "A new Disolucion is created with identifier {{ param }}",
+            "updated": "A Disolucion is updated with identifier {{ param }}",
+            "deleted": "A Disolucion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Disolucion {{ id }}?"
+            },
+            "detail": {
+                "title": "Disolucion"
+            },
+            "rut": "Rut",
+            "dv": "Dv",
+            "extracto": "Extracto",
+            "nombre": "Nombre",
+            "fecpub": "Fecpub",
+            "nomfan": "Nomfan",
+            "feconst": "Feconst",
+            "tipconst": "Tipconst",
+            "duracion": "Duracion",
+            "fecterm": "Fecterm",
+            "cappag": "Cappag",
+            "capsus": "Capsus",
+            "nacciones": "Nacciones",
+            "notariorut": "Notariorut",
+            "notariodv": "Notariodv",
+            "directorrut": "Directorrut",
+            "directordv": "Directordv",
+            "reprut": "Reprut",
+            "repdv": "Repdv",
+            "regcom": "Regcom",
+            "fojas": "Fojas",
+            "num": "Num",
+            "ano": "Ano",
+            "fecesc": "Fecesc",
+            "estado": "Estado",
+            "grupo": "Grupo",
+            "fecact": "Fecact",
+            "fecactnom": "Fecactnom"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+
+<div *ngIf="controlCambioRazon">
+    <h2><span jhiTranslate="demojhipsterApp.controlCambioRazon.detail.title">Control Cambio Razon</span> {{controlCambioRazon.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioExtracto">Cambio Extracto</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioExtracto}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioRut">Cambio Rut</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioRut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioDv">Cambio Dv</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioDv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioEmp">Cambio Emp</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioEmp}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioFanta">Cambio Fanta</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioFanta}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioaEmp">Cambioa Emp</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioaEmp}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.controlCambioRazon.cambioaFanta">Cambioa Fanta</span></dt>
+        <dd>
+            <span>{{controlCambioRazon.cambioaFanta}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'control-cambio-razon-sapweb/'+ controlCambioRazon.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

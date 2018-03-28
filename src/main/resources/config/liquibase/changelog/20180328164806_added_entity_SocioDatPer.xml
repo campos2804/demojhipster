@@ -21,23 +21,27 @@
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="corr_control" type="integer">
+            <column name="iden" type="integer">
                 <constraints nullable="true" />
             </column>
 
-            <column name="usuario_id" type="varchar(255)">
+            <column name="profesion" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="extracto" type="varchar(255)">
+            <column name="direccion" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="fecha_activa" type="date">
+            <column name="comuna" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="fecha_termina" type="date">
+            <column name="ciudad" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="region" type="integer">
                 <constraints nullable="true" />
             </column>
 

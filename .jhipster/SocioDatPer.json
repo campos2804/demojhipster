@@ -3,28 +3,32 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "corrControl",
+            "fieldName": "iden",
             "fieldType": "Integer"
         },
         {
-            "fieldName": "usuarioId",
+            "fieldName": "profesion",
             "fieldType": "String"
         },
         {
-            "fieldName": "extracto",
+            "fieldName": "direccion",
             "fieldType": "String"
         },
         {
-            "fieldName": "fechaActiva",
-            "fieldType": "LocalDate"
+            "fieldName": "comuna",
+            "fieldType": "String"
         },
         {
-            "fieldName": "fechaTermina",
-            "fieldType": "LocalDate"
+            "fieldName": "ciudad",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20180328164806",
-    "javadoc": "table SOCCONS_TABLA_CONTROL",
+    "javadoc": "table SOCCONS_SOCIOS_DATPER",
     "entityTableName": "socio_dat_per",
     "dto": "mapstruct",
     "pagination": "no",

@@ -16,11 +16,12 @@
             "detail": {
                 "title": "Socio Dat Per"
             },
-            "corrControl": "Corr Control",
-            "usuarioId": "Usuario Id",
-            "extracto": "Extracto",
-            "fechaActiva": "Fecha Activa",
-            "fechaTermina": "Fecha Termina"
+            "iden": "Iden",
+            "profesion": "Profesion",
+            "direccion": "Direccion",
+            "comuna": "Comuna",
+            "ciudad": "Ciudad",
+            "region": "Region"
         }
     }
 }

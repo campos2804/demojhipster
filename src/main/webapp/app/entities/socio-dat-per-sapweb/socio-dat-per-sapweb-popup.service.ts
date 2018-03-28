@@ -29,20 +29,6 @@ export class SocioDatPerSapwebPopupService {
                 this.socioDatPerService.find(id)
                     .subscribe((socioDatPerResponse: HttpResponse<SocioDatPerSapweb>) => {
                         const socioDatPer: SocioDatPerSapweb = socioDatPerResponse.body;
-                        if (socioDatPer.fechaActiva) {
-                            socioDatPer.fechaActiva = {
-                                year: socioDatPer.fechaActiva.getFullYear(),
-                                month: socioDatPer.fechaActiva.getMonth() + 1,
-                                day: socioDatPer.fechaActiva.getDate()
-                            };
-                        }
-                        if (socioDatPer.fechaTermina) {
-                            socioDatPer.fechaTermina = {
-                                year: socioDatPer.fechaTermina.getFullYear(),
-                                month: socioDatPer.fechaTermina.getMonth() + 1,
-                                day: socioDatPer.fechaTermina.getDate()
-                            };
-                        }
                         this.ngbModalRef = this.socioDatPerModalRef(component, socioDatPer);
                         resolve(this.ngbModalRef);
                     });

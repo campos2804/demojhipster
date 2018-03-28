@@ -1,7 +1,6 @@
 package io.github.jhipster.application.service.dto;
 
 
-import java.time.LocalDate;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,15 +11,17 @@ public class SocioDatPerDTO implements Serializable {
 
     private Long id;
 
-    private Integer corrControl;
+    private Integer iden;
 
-    private String usuarioId;
+    private String profesion;
 
-    private String extracto;
+    private String direccion;
 
-    private LocalDate fechaActiva;
+    private String comuna;
 
-    private LocalDate fechaTermina;
+    private String ciudad;
+
+    private Integer region;
 
     public Long getId() {
         return id;
@@ -30,44 +31,52 @@ public class SocioDatPerDTO implements Serializable {
         this.id = id;
     }
 
-    public Integer getCorrControl() {
-        return corrControl;
+    public Integer getIden() {
+        return iden;
     }
 
-    public void setCorrControl(Integer corrControl) {
-        this.corrControl = corrControl;
+    public void setIden(Integer iden) {
+        this.iden = iden;
     }
 
-    public String getUsuarioId() {
-        return usuarioId;
+    public String getProfesion() {
+        return profesion;
     }
 
-    public void setUsuarioId(String usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
     }
 
-    public String getExtracto() {
-        return extracto;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setExtracto(String extracto) {
-        this.extracto = extracto;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public LocalDate getFechaActiva() {
-        return fechaActiva;
+    public String getComuna() {
+        return comuna;
     }
 
-    public void setFechaActiva(LocalDate fechaActiva) {
-        this.fechaActiva = fechaActiva;
+    public void setComuna(String comuna) {
+        this.comuna = comuna;
     }
 
-    public LocalDate getFechaTermina() {
-        return fechaTermina;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setFechaTermina(LocalDate fechaTermina) {
-        this.fechaTermina = fechaTermina;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Integer getRegion() {
+        return region;
+    }
+
+    public void setRegion(Integer region) {
+        this.region = region;
     }
 
     @Override
@@ -95,11 +104,12 @@ public class SocioDatPerDTO implements Serializable {
     public String toString() {
         return "SocioDatPerDTO{" +
             "id=" + getId() +
-            ", corrControl=" + getCorrControl() +
-            ", usuarioId='" + getUsuarioId() + "'" +
-            ", extracto='" + getExtracto() + "'" +
-            ", fechaActiva='" + getFechaActiva() + "'" +
-            ", fechaTermina='" + getFechaTermina() + "'" +
+            ", iden=" + getIden() +
+            ", profesion='" + getProfesion() + "'" +
+            ", direccion='" + getDireccion() + "'" +
+            ", comuna='" + getComuna() + "'" +
+            ", ciudad='" + getCiudad() + "'" +
+            ", region=" + getRegion() +
             "}";
     }
 }

@@ -47,16 +47,6 @@ entity SocioDatPer {
     region Integer
 }
 
-/*
-* table SOCCONS_TABLA_CONTROL
-*/
-entity SocioDatPer {
-	corrControl Integer,
-    usuarioId String,
-    extracto String,
-    fechaActiva LocalDate,
-    fechaTermina LocalDate
-}
 
 /*
 * table SOCCONS_SOCIEDAD_CONSTITUCION

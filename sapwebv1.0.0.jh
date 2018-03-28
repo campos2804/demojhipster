@@ -1,0 +1,284 @@
+/* 
+*	Table SOCCONS_CARGA_SOCVIG
+*/
+entity CargaSocvig {
+	rut Integer,
+    dv String,
+    nivel Integer
+}
+
+/* 
+*	Table SOCCONS_CONTROL_CAMBIO_RAZON
+*/
+entity ControlCambioRazon {
+	cambioExtracto String,
+    cambioRut Integer,
+    cambioDv String,
+    cambioEmp String,
+    cambioFanta String,
+    cambioaEmp String,
+    cambioaFanta String
+}
+
+/*
+* table SOCCONS_SOCIOS
+*/
+entity Socio {
+	rut Integer,
+    dv String,
+    nombre String,
+    extracto String,
+    aporte String,
+    aportePorcen Float,
+    estado Integer,
+    estadoEs Integer,
+    iden Integer
+}
+
+/*
+* table SOCCONS_SOCIOS_DATPER
+*/
+entity SocioDatPer {
+	iden Integer,
+    profesion String,
+    direccion String,
+    comuna String,
+    ciudad String,
+    region Integer
+}
+
+/*
+* table SOCCONS_TABLA_CONTROL
+*/
+entity SocioDatPer {
+	corrControl Integer,
+    usuarioId String,
+    extracto String,
+    fechaActiva LocalDate,
+    fechaTermina LocalDate
+}
+
+/*
+* table SOCCONS_SOCIEDAD_CONSTITUCION
+*/
+entity Constitucion {
+	rut Integer,  
+	dv String,  
+    extracto  String,                                     
+    nombre   String,                                      
+    fecpub   String,                                      
+    nomfan   String,                                      
+    feconst    String,                                    
+    tipconst   String,                                    
+    duracion  String,                                     
+    fecterm     String,                                   
+    cappag     String,                                    
+    capsus     String,                                    
+    nacciones   String,                                   
+    notario_rut   Integer,
+    notario_dv   String,  
+    director_rut   Integer,
+    director_dv   String,  
+    rep_rut       Integer,
+    rep_dv  	 String,  
+    estado  		 Integer,
+    extnomdup  		 Integer,
+    extnomdup_rut   Integer,
+    extnomdup_dv   String,  
+    id   			 Integer,
+    grupo  			 Integer,
+    fecact           LocalDate,
+    fecact_nom LocalDate
+}
+
+
+/*
+* table SOCCONS_SOCIEDAD_MODIFICACION
+*/
+entity Modificacion {
+	rut Integer,  
+	dv String,  
+    extracto  String,                                     
+    nombre   String,                                      
+    fecpub   String,                                      
+    nomfan   String,                                      
+    feconst    String,                                    
+    tipconst   String,                                    
+    duracion  String,                                     
+    fecterm     String,                                   
+    cappag     String,                                    
+    capsus     String,                                    
+    nacciones   String,                                   
+    notario_rut   Integer,
+    notario_dv   String,  
+    director_rut   Integer,
+    director_dv   String,  
+    rep_rut       Integer,
+    rep_dv  	 String,      
+    regcom      String,            
+    fojas      String,             
+    num        String,             
+    ano       String,              
+    fpubconst    String,                               
+    fecescrit      LocalDate,
+    estado   Integer,
+    id   Integer,
+    grupo   Integer,
+    fecact         LocalDate,
+    fecact_nom     LocalDate
+    
+}
+
+
+/*
+* table SOCCONS_SOCIEDAD_DISOLUCION
+*/
+entity Disolucion {
+	rut Integer,  
+	dv String,  
+    extracto  String,                                     
+    nombre   String,                                      
+    fecpub   String,                                      
+    nomfan   String,                                      
+    feconst    String,                                    
+    tipconst   String,                                    
+    duracion  String,                                     
+    fecterm     String,                                   
+    cappag     String,                                    
+    capsus     String,                                    
+    nacciones   String,                                   
+    notario_rut   Integer,
+    notario_dv   String,  
+    director_rut   Integer,
+    director_dv   String,  
+    rep_rut       Integer,
+    rep_dv  	 String,  
+    regcom      String,            
+    fojas      String,             
+    num        String,             
+    ano       String,                               
+    fecesc      LocalDate,
+    estado   Integer,
+    id   Integer,
+    grupo   Integer,
+    fecact         LocalDate,
+    fecact_nom     LocalDate
+}
+
+
+
+/*
+*entity Country {
+	*countryName String
+*}
+*/
+
+// an ignored comment
+/** not an ignored comment */
+/*entity Location {
+*	streetAddress String,
+*	postalCode String,
+*	city String,
+*	stateProvince String
+*}
+*/
+
+/*entity Department {
+*	departmentName String required
+*}
+*/
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+/*entity Task {
+*	title String,
+*	description String
+*}
+*/
+
+/**
+ * The Employee entity.
+ */
+//entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+//	firstName String,
+//	lastName String,
+//	email String,
+//	phoneNumber String,
+//	hireDate Instant,
+//	salary Long,
+//	commissionPct Long
+//}
+
+//entity Job {
+//	jobTitle String,
+//	minSalary Long,
+//	maxSalary Long
+//}
+
+//entity JobHistory {
+//	startDate Instant,
+//	endDate Instant,
+//	language Language
+//}
+
+
+
+//enum Language {
+//    FRENCH, ENGLISH, SPANISH
+//}
+
+//relationship OneToOne {
+//	Country{region} to Region
+//}
+
+//relationship OneToOne {
+//	Location{country} to Country
+//}
+
+//relationship OneToOne {
+//	Department{location} to Location
+//}
+
+//relationship ManyToMany {
+//	Job{task(title)} to Task{job}
+//}
+
+// defining multiple OneToMany relationships with comments
+//relationship OneToMany {
+//	Employee{job} to Job,
+	/**
+	* A relationship
+	*/
+//	Department{employee} to
+	/**
+	* Another side of the same relationship
+	*/
+//	Employee
+//}
+
+//relationship ManyToOne {
+//	Employee{manager} to Employee
+//}
+
+// defining multiple oneToOne relationships
+//relationship OneToOne {
+//	JobHistory{job} to Job,
+//	JobHistory{department} to Department,
+//	JobHistory{employee} to Employee
+//}
+
+// Set pagination options
+paginate Socio with infinite-scroll
+paginate Constitucion, Modificacion, Disolucion with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except CArgoSocvig, ControlCambioRazon
+// Set an angular suffix
+angularSuffix * with sapweb

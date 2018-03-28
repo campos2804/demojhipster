@@ -3,11 +3,12 @@ import { BaseEntity } from './../../shared';
 export class SocioDatPerSapweb implements BaseEntity {
     constructor(
         public id?: number,
-        public corrControl?: number,
-        public usuarioId?: string,
-        public extracto?: string,
-        public fechaActiva?: any,
-        public fechaTermina?: any,
+        public iden?: number,
+        public profesion?: string,
+        public direccion?: string,
+        public comuna?: string,
+        public ciudad?: string,
+        public region?: number,
     ) {
     }
 }

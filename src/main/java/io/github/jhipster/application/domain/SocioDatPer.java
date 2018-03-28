@@ -7,13 +7,12 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * table SOCCONS_TABLA_CONTROL
+ * table SOCCONS_SOCIOS_DATPER
  */
-@ApiModel(description = "table SOCCONS_TABLA_CONTROL")
+@ApiModel(description = "table SOCCONS_SOCIOS_DATPER")
 @Entity
 @Table(name = "socio_dat_per")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -26,20 +25,23 @@ public class SocioDatPer implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "corr_control")
-    private Integer corrControl;
+    @Column(name = "iden")
+    private Integer iden;
 
-    @Column(name = "usuario_id")
-    private String usuarioId;
+    @Column(name = "profesion")
+    private String profesion;
 
-    @Column(name = "extracto")
-    private String extracto;
+    @Column(name = "direccion")
+    private String direccion;
 
-    @Column(name = "fecha_activa")
-    private LocalDate fechaActiva;
+    @Column(name = "comuna")
+    private String comuna;
 
-    @Column(name = "fecha_termina")
-    private LocalDate fechaTermina;
+    @Column(name = "ciudad")
+    private String ciudad;
+
+    @Column(name = "region")
+    private Integer region;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -50,69 +52,82 @@ public class SocioDatPer implements Serializable {
         this.id = id;
     }
 
-    public Integer getCorrControl() {
-        return corrControl;
+    public Integer getIden() {
+        return iden;
     }
 
-    public SocioDatPer corrControl(Integer corrControl) {
-        this.corrControl = corrControl;
+    public SocioDatPer iden(Integer iden) {
+        this.iden = iden;
         return this;
     }
 
-    public void setCorrControl(Integer corrControl) {
-        this.corrControl = corrControl;
+    public void setIden(Integer iden) {
+        this.iden = iden;
     }
 
-    public String getUsuarioId() {
-        return usuarioId;
+    public String getProfesion() {
+        return profesion;
     }
 
-    public SocioDatPer usuarioId(String usuarioId) {
-        this.usuarioId = usuarioId;
+    public SocioDatPer profesion(String profesion) {
+        this.profesion = profesion;
         return this;
     }
 
-    public void setUsuarioId(String usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
     }
 
-    public String getExtracto() {
-        return extracto;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public SocioDatPer extracto(String extracto) {
-        this.extracto = extracto;
+    public SocioDatPer direccion(String direccion) {
+        this.direccion = direccion;
         return this;
     }
 
-    public void setExtracto(String extracto) {
-        this.extracto = extracto;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public LocalDate getFechaActiva() {
-        return fechaActiva;
+    public String getComuna() {
+        return comuna;
     }
 
-    public SocioDatPer fechaActiva(LocalDate fechaActiva) {
-        this.fechaActiva = fechaActiva;
+    public SocioDatPer comuna(String comuna) {
+        this.comuna = comuna;
         return this;
     }
 
-    public void setFechaActiva(LocalDate fechaActiva) {
-        this.fechaActiva = fechaActiva;
+    public void setComuna(String comuna) {
+        this.comuna = comuna;
     }
 
-    public LocalDate getFechaTermina() {
-        return fechaTermina;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public SocioDatPer fechaTermina(LocalDate fechaTermina) {
-        this.fechaTermina = fechaTermina;
+    public SocioDatPer ciudad(String ciudad) {
+        this.ciudad = ciudad;
         return this;
     }
 
-    public void setFechaTermina(LocalDate fechaTermina) {
-        this.fechaTermina = fechaTermina;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Integer getRegion() {
+        return region;
+    }
+
+    public SocioDatPer region(Integer region) {
+        this.region = region;
+        return this;
+    }
+
+    public void setRegion(Integer region) {
+        this.region = region;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -140,11 +155,12 @@ public class SocioDatPer implements Serializable {
     public String toString() {
         return "SocioDatPer{" +
             "id=" + getId() +
-            ", corrControl=" + getCorrControl() +
-            ", usuarioId='" + getUsuarioId() + "'" +
-            ", extracto='" + getExtracto() + "'" +
-            ", fechaActiva='" + getFechaActiva() + "'" +
-            ", fechaTermina='" + getFechaTermina() + "'" +
+            ", iden=" + getIden() +
+            ", profesion='" + getProfesion() + "'" +
+            ", direccion='" + getDireccion() + "'" +
+            ", comuna='" + getComuna() + "'" +
+            ", ciudad='" + getCiudad() + "'" +
+            ", region=" + getRegion() +
             "}";
     }
 }

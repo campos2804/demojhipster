@@ -24,8 +24,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static io.github.jhipster.application.web.rest.TestUtil.createFormattingConversionService;
@@ -43,20 +41,23 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = DemojhipsterApp.class)
 public class SocioDatPerResourceIntTest {
 
-    private static final Integer DEFAULT_CORR_CONTROL = 1;
-    private static final Integer UPDATED_CORR_CONTROL = 2;
+    private static final Integer DEFAULT_IDEN = 1;
+    private static final Integer UPDATED_IDEN = 2;
 
-    private static final String DEFAULT_USUARIO_ID = "AAAAAAAAAA";
-    private static final String UPDATED_USUARIO_ID = "BBBBBBBBBB";
+    private static final String DEFAULT_PROFESION = "AAAAAAAAAA";
+    private static final String UPDATED_PROFESION = "BBBBBBBBBB";
 
-    private static final String DEFAULT_EXTRACTO = "AAAAAAAAAA";
-    private static final String UPDATED_EXTRACTO = "BBBBBBBBBB";
+    private static final String DEFAULT_DIRECCION = "AAAAAAAAAA";
+    private static final String UPDATED_DIRECCION = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_FECHA_ACTIVA = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_FECHA_ACTIVA = LocalDate.now(ZoneId.systemDefault());
+    private static final String DEFAULT_COMUNA = "AAAAAAAAAA";
+    private static final String UPDATED_COMUNA = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_FECHA_TERMINA = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_FECHA_TERMINA = LocalDate.now(ZoneId.systemDefault());
+    private static final String DEFAULT_CIUDAD = "AAAAAAAAAA";
+    private static final String UPDATED_CIUDAD = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_REGION = 1;
+    private static final Integer UPDATED_REGION = 2;
 
     @Autowired
     private SocioDatPerRepository socioDatPerRepository;
@@ -102,11 +103,12 @@ public class SocioDatPerResourceIntTest {
      */
     public static SocioDatPer createEntity(EntityManager em) {
         SocioDatPer socioDatPer = new SocioDatPer()
-            .corrControl(DEFAULT_CORR_CONTROL)
-            .usuarioId(DEFAULT_USUARIO_ID)
-            .extracto(DEFAULT_EXTRACTO)
-            .fechaActiva(DEFAULT_FECHA_ACTIVA)
-            .fechaTermina(DEFAULT_FECHA_TERMINA);
+            .iden(DEFAULT_IDEN)
+            .profesion(DEFAULT_PROFESION)
+            .direccion(DEFAULT_DIRECCION)
+            .comuna(DEFAULT_COMUNA)
+            .ciudad(DEFAULT_CIUDAD)
+            .region(DEFAULT_REGION);
         return socioDatPer;
     }
 
@@ -131,11 +133,12 @@ public class SocioDatPerResourceIntTest {
         List<SocioDatPer> socioDatPerList = socioDatPerRepository.findAll();
         assertThat(socioDatPerList).hasSize(databaseSizeBeforeCreate + 1);
         SocioDatPer testSocioDatPer = socioDatPerList.get(socioDatPerList.size() - 1);
-        assertThat(testSocioDatPer.getCorrControl()).isEqualTo(DEFAULT_CORR_CONTROL);
-        assertThat(testSocioDatPer.getUsuarioId()).isEqualTo(DEFAULT_USUARIO_ID);
-        assertThat(testSocioDatPer.getExtracto()).isEqualTo(DEFAULT_EXTRACTO);
-        assertThat(testSocioDatPer.getFechaActiva()).isEqualTo(DEFAULT_FECHA_ACTIVA);
-        assertThat(testSocioDatPer.getFechaTermina()).isEqualTo(DEFAULT_FECHA_TERMINA);
+        assertThat(testSocioDatPer.getIden()).isEqualTo(DEFAULT_IDEN);
+        assertThat(testSocioDatPer.getProfesion()).isEqualTo(DEFAULT_PROFESION);
+        assertThat(testSocioDatPer.getDireccion()).isEqualTo(DEFAULT_DIRECCION);
+        assertThat(testSocioDatPer.getComuna()).isEqualTo(DEFAULT_COMUNA);
+        assertThat(testSocioDatPer.getCiudad()).isEqualTo(DEFAULT_CIUDAD);
+        assertThat(testSocioDatPer.getRegion()).isEqualTo(DEFAULT_REGION);
     }
 
     @Test
@@ -169,11 +172,12 @@ public class SocioDatPerResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(socioDatPer.getId().intValue())))
-            .andExpect(jsonPath("$.[*].corrControl").value(hasItem(DEFAULT_CORR_CONTROL)))
-            .andExpect(jsonPath("$.[*].usuarioId").value(hasItem(DEFAULT_USUARIO_ID.toString())))
-            .andExpect(jsonPath("$.[*].extracto").value(hasItem(DEFAULT_EXTRACTO.toString())))
-            .andExpect(jsonPath("$.[*].fechaActiva").value(hasItem(DEFAULT_FECHA_ACTIVA.toString())))
-            .andExpect(jsonPath("$.[*].fechaTermina").value(hasItem(DEFAULT_FECHA_TERMINA.toString())));
+            .andExpect(jsonPath("$.[*].iden").value(hasItem(DEFAULT_IDEN)))
+            .andExpect(jsonPath("$.[*].profesion").value(hasItem(DEFAULT_PROFESION.toString())))
+            .andExpect(jsonPath("$.[*].direccion").value(hasItem(DEFAULT_DIRECCION.toString())))
+            .andExpect(jsonPath("$.[*].comuna").value(hasItem(DEFAULT_COMUNA.toString())))
+            .andExpect(jsonPath("$.[*].ciudad").value(hasItem(DEFAULT_CIUDAD.toString())))
+            .andExpect(jsonPath("$.[*].region").value(hasItem(DEFAULT_REGION)));
     }
 
     @Test
@@ -187,11 +191,12 @@ public class SocioDatPerResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(socioDatPer.getId().intValue()))
-            .andExpect(jsonPath("$.corrControl").value(DEFAULT_CORR_CONTROL))
-            .andExpect(jsonPath("$.usuarioId").value(DEFAULT_USUARIO_ID.toString()))
-            .andExpect(jsonPath("$.extracto").value(DEFAULT_EXTRACTO.toString()))
-            .andExpect(jsonPath("$.fechaActiva").value(DEFAULT_FECHA_ACTIVA.toString()))
-            .andExpect(jsonPath("$.fechaTermina").value(DEFAULT_FECHA_TERMINA.toString()));
+            .andExpect(jsonPath("$.iden").value(DEFAULT_IDEN))
+            .andExpect(jsonPath("$.profesion").value(DEFAULT_PROFESION.toString()))
+            .andExpect(jsonPath("$.direccion").value(DEFAULT_DIRECCION.toString()))
+            .andExpect(jsonPath("$.comuna").value(DEFAULT_COMUNA.toString()))
+            .andExpect(jsonPath("$.ciudad").value(DEFAULT_CIUDAD.toString()))
+            .andExpect(jsonPath("$.region").value(DEFAULT_REGION));
     }
 
     @Test
@@ -214,11 +219,12 @@ public class SocioDatPerResourceIntTest {
         // Disconnect from session so that the updates on updatedSocioDatPer are not directly saved in db
         em.detach(updatedSocioDatPer);
         updatedSocioDatPer
-            .corrControl(UPDATED_CORR_CONTROL)
-            .usuarioId(UPDATED_USUARIO_ID)
-            .extracto(UPDATED_EXTRACTO)
-            .fechaActiva(UPDATED_FECHA_ACTIVA)
-            .fechaTermina(UPDATED_FECHA_TERMINA);
+            .iden(UPDATED_IDEN)
+            .profesion(UPDATED_PROFESION)
+            .direccion(UPDATED_DIRECCION)
+            .comuna(UPDATED_COMUNA)
+            .ciudad(UPDATED_CIUDAD)
+            .region(UPDATED_REGION);
         SocioDatPerDTO socioDatPerDTO = socioDatPerMapper.toDto(updatedSocioDatPer);
 
         restSocioDatPerMockMvc.perform(put("/api/socio-dat-pers")
@@ -230,11 +236,12 @@ public class SocioDatPerResourceIntTest {
         List<SocioDatPer> socioDatPerList = socioDatPerRepository.findAll();
         assertThat(socioDatPerList).hasSize(databaseSizeBeforeUpdate);
         SocioDatPer testSocioDatPer = socioDatPerList.get(socioDatPerList.size() - 1);
-        assertThat(testSocioDatPer.getCorrControl()).isEqualTo(UPDATED_CORR_CONTROL);
-        assertThat(testSocioDatPer.getUsuarioId()).isEqualTo(UPDATED_USUARIO_ID);
-        assertThat(testSocioDatPer.getExtracto()).isEqualTo(UPDATED_EXTRACTO);
-        assertThat(testSocioDatPer.getFechaActiva()).isEqualTo(UPDATED_FECHA_ACTIVA);
-        assertThat(testSocioDatPer.getFechaTermina()).isEqualTo(UPDATED_FECHA_TERMINA);
+        assertThat(testSocioDatPer.getIden()).isEqualTo(UPDATED_IDEN);
+        assertThat(testSocioDatPer.getProfesion()).isEqualTo(UPDATED_PROFESION);
+        assertThat(testSocioDatPer.getDireccion()).isEqualTo(UPDATED_DIRECCION);
+        assertThat(testSocioDatPer.getComuna()).isEqualTo(UPDATED_COMUNA);
+        assertThat(testSocioDatPer.getCiudad()).isEqualTo(UPDATED_CIUDAD);
+        assertThat(testSocioDatPer.getRegion()).isEqualTo(UPDATED_REGION);
     }
 
     @Test

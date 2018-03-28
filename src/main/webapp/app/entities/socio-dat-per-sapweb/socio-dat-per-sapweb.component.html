@@ -17,22 +17,24 @@
             <thead>
             <tr>
             <th><span jhiTranslate="global.field.id">ID</span></th>
-            <th><span jhiTranslate="demojhipsterApp.socioDatPer.corrControl">Corr Control</span></th>
-            <th><span jhiTranslate="demojhipsterApp.socioDatPer.usuarioId">Usuario Id</span></th>
-            <th><span jhiTranslate="demojhipsterApp.socioDatPer.extracto">Extracto</span></th>
-            <th><span jhiTranslate="demojhipsterApp.socioDatPer.fechaActiva">Fecha Activa</span></th>
-            <th><span jhiTranslate="demojhipsterApp.socioDatPer.fechaTermina">Fecha Termina</span></th>
+            <th><span jhiTranslate="demojhipsterApp.socioDatPer.iden">Iden</span></th>
+            <th><span jhiTranslate="demojhipsterApp.socioDatPer.profesion">Profesion</span></th>
+            <th><span jhiTranslate="demojhipsterApp.socioDatPer.direccion">Direccion</span></th>
+            <th><span jhiTranslate="demojhipsterApp.socioDatPer.comuna">Comuna</span></th>
+            <th><span jhiTranslate="demojhipsterApp.socioDatPer.ciudad">Ciudad</span></th>
+            <th><span jhiTranslate="demojhipsterApp.socioDatPer.region">Region</span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let socioDatPer of socioDatPers ;trackBy: trackId">
                 <td><a [routerLink]="['../socio-dat-per-sapweb', socioDatPer.id ]">{{socioDatPer.id}}</a></td>
-                <td>{{socioDatPer.corrControl}}</td>
-                <td>{{socioDatPer.usuarioId}}</td>
-                <td>{{socioDatPer.extracto}}</td>
-                <td>{{socioDatPer.fechaActiva | date:'mediumDate'}}</td>
-                <td>{{socioDatPer.fechaTermina | date:'mediumDate'}}</td>
+                <td>{{socioDatPer.iden}}</td>
+                <td>{{socioDatPer.profesion}}</td>
+                <td>{{socioDatPer.direccion}}</td>
+                <td>{{socioDatPer.comuna}}</td>
+                <td>{{socioDatPer.ciudad}}</td>
+                <td>{{socioDatPer.region}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

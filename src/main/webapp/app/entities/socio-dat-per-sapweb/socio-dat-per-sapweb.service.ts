@@ -3,8 +3,6 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { SERVER_API_URL } from '../../app.constants';
 
-import { JhiDateUtils } from 'ng-jhipster';
-
 import { SocioDatPerSapweb } from './socio-dat-per-sapweb.model';
 import { createRequestOption } from '../../shared';
 
@@ -15,7 +13,7 @@ export class SocioDatPerSapwebService {
 
     private resourceUrl =  SERVER_API_URL + 'api/socio-dat-pers';
 
-    constructor(private http: HttpClient, private dateUtils: JhiDateUtils) { }
+    constructor(private http: HttpClient) { }
 
     create(socioDatPer: SocioDatPerSapweb): Observable<EntityResponseType> {
         const copy = this.convert(socioDatPer);
@@ -63,10 +61,6 @@ export class SocioDatPerSapwebService {
      */
     private convertItemFromServer(socioDatPer: SocioDatPerSapweb): SocioDatPerSapweb {
         const copy: SocioDatPerSapweb = Object.assign({}, socioDatPer);
-        copy.fechaActiva = this.dateUtils
-            .convertLocalDateFromServer(socioDatPer.fechaActiva);
-        copy.fechaTermina = this.dateUtils
-            .convertLocalDateFromServer(socioDatPer.fechaTermina);
         return copy;
     }
 
@@ -75,10 +69,6 @@ export class SocioDatPerSapwebService {
      */
     private convert(socioDatPer: SocioDatPerSapweb): SocioDatPerSapweb {
         const copy: SocioDatPerSapweb = Object.assign({}, socioDatPer);
-        copy.fechaActiva = this.dateUtils
-            .convertLocalDateToServer(socioDatPer.fechaActiva);
-        copy.fechaTermina = this.dateUtils
-            .convertLocalDateToServer(socioDatPer.fechaTermina);
         return copy;
     }
 }

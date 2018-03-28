@@ -18,8 +18,6 @@ export class SocioDatPerSapwebDialogComponent implements OnInit {
 
     socioDatPer: SocioDatPerSapweb;
     isSaving: boolean;
-    fechaActivaDp: any;
-    fechaTerminaDp: any;
 
     constructor(
         public activeModal: NgbActiveModal,

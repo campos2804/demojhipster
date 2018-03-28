@@ -1,0 +1,116 @@
+<div>
+    <h2>
+        <span jhiTranslate="demojhipsterApp.constitucion.home.title">Constitucions</span>
+        <button class="btn btn-primary float-right jh-create-entity create-constitucion-sapweb" [routerLink]="['/', { outlets: { popup: ['constitucion-sapweb-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="demojhipsterApp.constitucion.home.createLabel">
+            Create new Constitucion
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="constitucions">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="rut"><span jhiTranslate="demojhipsterApp.constitucion.rut">Rut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="dv"><span jhiTranslate="demojhipsterApp.constitucion.dv">Dv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extracto"><span jhiTranslate="demojhipsterApp.constitucion.extracto">Extracto</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nombre"><span jhiTranslate="demojhipsterApp.constitucion.nombre">Nombre</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecpub"><span jhiTranslate="demojhipsterApp.constitucion.fecpub">Fecpub</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nomfan"><span jhiTranslate="demojhipsterApp.constitucion.nomfan">Nomfan</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="feconst"><span jhiTranslate="demojhipsterApp.constitucion.feconst">Feconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="tipconst"><span jhiTranslate="demojhipsterApp.constitucion.tipconst">Tipconst</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="duracion"><span jhiTranslate="demojhipsterApp.constitucion.duracion">Duracion</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecterm"><span jhiTranslate="demojhipsterApp.constitucion.fecterm">Fecterm</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="cappag"><span jhiTranslate="demojhipsterApp.constitucion.cappag">Cappag</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="capsus"><span jhiTranslate="demojhipsterApp.constitucion.capsus">Capsus</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nacciones"><span jhiTranslate="demojhipsterApp.constitucion.nacciones">Nacciones</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="notariorut"><span jhiTranslate="demojhipsterApp.constitucion.notariorut">Notariorut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="notariodv"><span jhiTranslate="demojhipsterApp.constitucion.notariodv">Notariodv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="directorrut"><span jhiTranslate="demojhipsterApp.constitucion.directorrut">Directorrut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="directordv"><span jhiTranslate="demojhipsterApp.constitucion.directordv">Directordv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="reprut"><span jhiTranslate="demojhipsterApp.constitucion.reprut">Reprut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="repdv"><span jhiTranslate="demojhipsterApp.constitucion.repdv">Repdv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="estado"><span jhiTranslate="demojhipsterApp.constitucion.estado">Estado</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extnomdup"><span jhiTranslate="demojhipsterApp.constitucion.extnomdup">Extnomdup</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extnomduprut"><span jhiTranslate="demojhipsterApp.constitucion.extnomduprut">Extnomduprut</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="extnomdupdv"><span jhiTranslate="demojhipsterApp.constitucion.extnomdupdv">Extnomdupdv</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="grupo"><span jhiTranslate="demojhipsterApp.constitucion.grupo">Grupo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecact"><span jhiTranslate="demojhipsterApp.constitucion.fecact">Fecact</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecactnom"><span jhiTranslate="demojhipsterApp.constitucion.fecactnom">Fecactnom</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let constitucion of constitucions ;trackBy: trackId">
+                <td><a [routerLink]="['../constitucion-sapweb', constitucion.id ]">{{constitucion.id}}</a></td>
+                <td>{{constitucion.rut}}</td>
+                <td>{{constitucion.dv}}</td>
+                <td>{{constitucion.extracto}}</td>
+                <td>{{constitucion.nombre}}</td>
+                <td>{{constitucion.fecpub}}</td>
+                <td>{{constitucion.nomfan}}</td>
+                <td>{{constitucion.feconst}}</td>
+                <td>{{constitucion.tipconst}}</td>
+                <td>{{constitucion.duracion}}</td>
+                <td>{{constitucion.fecterm}}</td>
+                <td>{{constitucion.cappag}}</td>
+                <td>{{constitucion.capsus}}</td>
+                <td>{{constitucion.nacciones}}</td>
+                <td>{{constitucion.notariorut}}</td>
+                <td>{{constitucion.notariodv}}</td>
+                <td>{{constitucion.directorrut}}</td>
+                <td>{{constitucion.directordv}}</td>
+                <td>{{constitucion.reprut}}</td>
+                <td>{{constitucion.repdv}}</td>
+                <td>{{constitucion.estado}}</td>
+                <td>{{constitucion.extnomdup}}</td>
+                <td>{{constitucion.extnomduprut}}</td>
+                <td>{{constitucion.extnomdupdv}}</td>
+                <td>{{constitucion.grupo}}</td>
+                <td>{{constitucion.fecact | date:'mediumDate'}}</td>
+                <td>{{constitucion.fecactnom | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../constitucion-sapweb', constitucion.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'constitucion-sapweb/'+ constitucion.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'constitucion-sapweb/'+ constitucion.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="constitucions && constitucions.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

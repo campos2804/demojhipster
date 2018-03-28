@@ -1,0 +1,42 @@
+
+<div *ngIf="socioDatPer">
+    <h2><span jhiTranslate="demojhipsterApp.socioDatPer.detail.title">Socio Dat Per</span> {{socioDatPer.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="demojhipsterApp.socioDatPer.corrControl">Corr Control</span></dt>
+        <dd>
+            <span>{{socioDatPer.corrControl}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socioDatPer.usuarioId">Usuario Id</span></dt>
+        <dd>
+            <span>{{socioDatPer.usuarioId}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socioDatPer.extracto">Extracto</span></dt>
+        <dd>
+            <span>{{socioDatPer.extracto}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socioDatPer.fechaActiva">Fecha Activa</span></dt>
+        <dd>
+            <span>{{socioDatPer.fechaActiva | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.socioDatPer.fechaTermina">Fecha Termina</span></dt>
+        <dd>
+            <span>{{socioDatPer.fechaTermina | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'socio-dat-per-sapweb/'+ socioDatPer.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

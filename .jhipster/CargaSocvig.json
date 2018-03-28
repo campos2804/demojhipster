@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "rut",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nivel",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180328145936",
+    "javadoc": "Table SOCCONS_CARGA_SOCVIG",
+    "entityTableName": "carga_socvig",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "sapweb"
+}

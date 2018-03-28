@@ -1,0 +1,165 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myConstitucionLabel" jhiTranslate="demojhipsterApp.constitucion.home.createOrEditLabel">Create or edit a Constitucion</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!constitucion.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="constitucion.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.rut" for="field_rut">Rut</label>
+            <input type="number" class="form-control" name="rut" id="field_rut"
+                [(ngModel)]="constitucion.rut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.dv" for="field_dv">Dv</label>
+            <input type="text" class="form-control" name="dv" id="field_dv"
+                [(ngModel)]="constitucion.dv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.extracto" for="field_extracto">Extracto</label>
+            <input type="text" class="form-control" name="extracto" id="field_extracto"
+                [(ngModel)]="constitucion.extracto" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.nombre" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                [(ngModel)]="constitucion.nombre" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.fecpub" for="field_fecpub">Fecpub</label>
+            <input type="text" class="form-control" name="fecpub" id="field_fecpub"
+                [(ngModel)]="constitucion.fecpub" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.nomfan" for="field_nomfan">Nomfan</label>
+            <input type="text" class="form-control" name="nomfan" id="field_nomfan"
+                [(ngModel)]="constitucion.nomfan" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.feconst" for="field_feconst">Feconst</label>
+            <input type="text" class="form-control" name="feconst" id="field_feconst"
+                [(ngModel)]="constitucion.feconst" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.tipconst" for="field_tipconst">Tipconst</label>
+            <input type="text" class="form-control" name="tipconst" id="field_tipconst"
+                [(ngModel)]="constitucion.tipconst" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.duracion" for="field_duracion">Duracion</label>
+            <input type="text" class="form-control" name="duracion" id="field_duracion"
+                [(ngModel)]="constitucion.duracion" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.fecterm" for="field_fecterm">Fecterm</label>
+            <input type="text" class="form-control" name="fecterm" id="field_fecterm"
+                [(ngModel)]="constitucion.fecterm" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.cappag" for="field_cappag">Cappag</label>
+            <input type="text" class="form-control" name="cappag" id="field_cappag"
+                [(ngModel)]="constitucion.cappag" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.capsus" for="field_capsus">Capsus</label>
+            <input type="text" class="form-control" name="capsus" id="field_capsus"
+                [(ngModel)]="constitucion.capsus" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.nacciones" for="field_nacciones">Nacciones</label>
+            <input type="text" class="form-control" name="nacciones" id="field_nacciones"
+                [(ngModel)]="constitucion.nacciones" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.notariorut" for="field_notariorut">Notariorut</label>
+            <input type="number" class="form-control" name="notariorut" id="field_notariorut"
+                [(ngModel)]="constitucion.notariorut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.notariodv" for="field_notariodv">Notariodv</label>
+            <input type="text" class="form-control" name="notariodv" id="field_notariodv"
+                [(ngModel)]="constitucion.notariodv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.directorrut" for="field_directorrut">Directorrut</label>
+            <input type="number" class="form-control" name="directorrut" id="field_directorrut"
+                [(ngModel)]="constitucion.directorrut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.directordv" for="field_directordv">Directordv</label>
+            <input type="text" class="form-control" name="directordv" id="field_directordv"
+                [(ngModel)]="constitucion.directordv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.reprut" for="field_reprut">Reprut</label>
+            <input type="number" class="form-control" name="reprut" id="field_reprut"
+                [(ngModel)]="constitucion.reprut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.repdv" for="field_repdv">Repdv</label>
+            <input type="text" class="form-control" name="repdv" id="field_repdv"
+                [(ngModel)]="constitucion.repdv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.estado" for="field_estado">Estado</label>
+            <input type="number" class="form-control" name="estado" id="field_estado"
+                [(ngModel)]="constitucion.estado" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.extnomdup" for="field_extnomdup">Extnomdup</label>
+            <input type="number" class="form-control" name="extnomdup" id="field_extnomdup"
+                [(ngModel)]="constitucion.extnomdup" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.extnomduprut" for="field_extnomduprut">Extnomduprut</label>
+            <input type="number" class="form-control" name="extnomduprut" id="field_extnomduprut"
+                [(ngModel)]="constitucion.extnomduprut" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.extnomdupdv" for="field_extnomdupdv">Extnomdupdv</label>
+            <input type="text" class="form-control" name="extnomdupdv" id="field_extnomdupdv"
+                [(ngModel)]="constitucion.extnomdupdv" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.grupo" for="field_grupo">Grupo</label>
+            <input type="number" class="form-control" name="grupo" id="field_grupo"
+                [(ngModel)]="constitucion.grupo" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.fecact" for="field_fecact">Fecact</label>
+            <div class="input-group">
+                <input id="field_fecact" type="text" class="form-control" name="fecact" ngbDatepicker  #fecactDp="ngbDatepicker" [(ngModel)]="constitucion.fecact"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="fecactDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="demojhipsterApp.constitucion.fecactnom" for="field_fecactnom">Fecactnom</label>
+            <div class="input-group">
+                <input id="field_fecactnom" type="text" class="form-control" name="fecactnom" ngbDatepicker  #fecactnomDp="ngbDatepicker" [(ngModel)]="constitucion.fecactnom"
+                />
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="fecactnomDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

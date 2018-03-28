@@ -1,0 +1,126 @@
+
+<div *ngIf="constitucion">
+    <h2><span jhiTranslate="demojhipsterApp.constitucion.detail.title">Constitucion</span> {{constitucion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.rut">Rut</span></dt>
+        <dd>
+            <span>{{constitucion.rut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.dv">Dv</span></dt>
+        <dd>
+            <span>{{constitucion.dv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.extracto">Extracto</span></dt>
+        <dd>
+            <span>{{constitucion.extracto}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{constitucion.nombre}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.fecpub">Fecpub</span></dt>
+        <dd>
+            <span>{{constitucion.fecpub}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.nomfan">Nomfan</span></dt>
+        <dd>
+            <span>{{constitucion.nomfan}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.feconst">Feconst</span></dt>
+        <dd>
+            <span>{{constitucion.feconst}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.tipconst">Tipconst</span></dt>
+        <dd>
+            <span>{{constitucion.tipconst}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.duracion">Duracion</span></dt>
+        <dd>
+            <span>{{constitucion.duracion}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.fecterm">Fecterm</span></dt>
+        <dd>
+            <span>{{constitucion.fecterm}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.cappag">Cappag</span></dt>
+        <dd>
+            <span>{{constitucion.cappag}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.capsus">Capsus</span></dt>
+        <dd>
+            <span>{{constitucion.capsus}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.nacciones">Nacciones</span></dt>
+        <dd>
+            <span>{{constitucion.nacciones}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.notariorut">Notariorut</span></dt>
+        <dd>
+            <span>{{constitucion.notariorut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.notariodv">Notariodv</span></dt>
+        <dd>
+            <span>{{constitucion.notariodv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.directorrut">Directorrut</span></dt>
+        <dd>
+            <span>{{constitucion.directorrut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.directordv">Directordv</span></dt>
+        <dd>
+            <span>{{constitucion.directordv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.reprut">Reprut</span></dt>
+        <dd>
+            <span>{{constitucion.reprut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.repdv">Repdv</span></dt>
+        <dd>
+            <span>{{constitucion.repdv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.estado">Estado</span></dt>
+        <dd>
+            <span>{{constitucion.estado}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.extnomdup">Extnomdup</span></dt>
+        <dd>
+            <span>{{constitucion.extnomdup}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.extnomduprut">Extnomduprut</span></dt>
+        <dd>
+            <span>{{constitucion.extnomduprut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.extnomdupdv">Extnomdupdv</span></dt>
+        <dd>
+            <span>{{constitucion.extnomdupdv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.grupo">Grupo</span></dt>
+        <dd>
+            <span>{{constitucion.grupo}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.fecact">Fecact</span></dt>
+        <dd>
+            <span>{{constitucion.fecact | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.constitucion.fecactnom">Fecactnom</span></dt>
+        <dd>
+            <span>{{constitucion.fecactnom | date:'mediumDate'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'constitucion-sapweb/'+ constitucion.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

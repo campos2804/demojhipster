@@ -1,0 +1,30 @@
+
+{
+    "demojhipsterApp": {
+        "socio" : {
+            "home": {
+                "title": "Socios",
+                "createLabel": "Crear nuevo Socio",
+                "createOrEditLabel": "Crear o editar Socio"
+            },
+            "created": "Un nuevo Socio ha sido creado con el identificador {{ param }}",
+            "updated": "Un Socio ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Socio ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Socio {{ id }}?"
+            },
+            "detail": {
+                "title": "Socio"
+            },
+            "rut": "Rut",
+            "dv": "Dv",
+            "nombre": "Nombre",
+            "extracto": "Extracto",
+            "aporte": "Aporte",
+            "aportePorcen": "Aporte Porcen",
+            "estado": "Estado",
+            "estadoEs": "Estado Es",
+            "iden": "Iden"
+        }
+    }
+}

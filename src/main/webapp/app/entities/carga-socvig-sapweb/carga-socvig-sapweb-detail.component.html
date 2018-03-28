@@ -1,0 +1,34 @@
+
+<div *ngIf="cargaSocvig">
+    <h2><span jhiTranslate="demojhipsterApp.cargaSocvig.detail.title">Carga Socvig</span> {{cargaSocvig.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="demojhipsterApp.cargaSocvig.rut">Rut</span></dt>
+        <dd>
+            <span>{{cargaSocvig.rut}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.cargaSocvig.dv">Dv</span></dt>
+        <dd>
+            <span>{{cargaSocvig.dv}}</span>
+        </dd>
+        <dt><span jhiTranslate="demojhipsterApp.cargaSocvig.nivel">Nivel</span></dt>
+        <dd>
+            <span>{{cargaSocvig.nivel}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'carga-socvig-sapweb/'+ cargaSocvig.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
